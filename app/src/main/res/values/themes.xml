@@ -1,0 +1,113 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+
+
+ <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/app_blue</item>
+        <item name="colorOnPrimary">@color/app_white</item>
+        <item name="android:statusBarColor">@color/app_white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="colorSurface">@color/app_white</item>
+        <item name="colorOnSurface">@color/app_blue</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+        <item name="textAppearanceHeadline6">@style/ToolbarTitle</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme"
+        parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="AppModalStyle"
+        parent="Widget.Design.BottomSheet.Modal">
+    </style>
+
+    <style name="ToolbarTitle" parent="TextAppearance.MaterialComponents.Headline6">
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="TextInputLayoutTheme" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="colorOnSurface">@color/textfield_box</item>
+        <item name="boxStrokeErrorColor">@color/app_error</item>
+        <item name="hintTextColor">@color/app_blue</item>
+        <item name="android:textColorHint">@color/textfield_normal</item>
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="errorIconDrawable">@null</item>
+    </style>
+
+    <style name="OrderStatusDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorOnSurface">@color/app_blue</item>
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="colorSecondary">@color/app_blue</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorOnSurface">@color/app_blue</item>
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="colorSecondary">@color/app_blue</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/AlertDialogBodyTheme</item>
+    </style>
+
+    <style name="AlertDialogBodyTheme" parent="@style/MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+
+    <style name="PaymentDialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorOnSurface">@color/app_blue</item>
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+        <item name="android:textColor">@color/app_blue</item>
+        <item name="colorSecondary">@color/app_blue</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/PaymentDialogTitleTheme</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/PaymentDialogBodyTheme</item>
+    </style>
+
+    <style name="PaymentDialogTitleTheme" parent="@style/MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/app_blue</item>
+    </style>
+
+    <style name="PaymentDialogBodyTheme" parent="@style/AlertDialogBodyTheme">
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/app_black</item>
+/    </style>
+
+    <style name="NSTButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="ThemeOverlay.App.MaterialAlertDialog" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="colorSurface">@color/app_white</item>
+        <item name="colorOnSurface">@color/app_blue</item>
+        <item name="alertDialogStyle">@style/MaterialAlertDialog.App</item>
+    </style>
+
+    <style name="MaterialAlertDialog.App" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
+    </style>
+
+    <style name="ShapeAppearance.App.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">15dp</item>
+    </style>
+
+    <style name="CircleImageView" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="app_black">#FF000000</color>
+    <color name="app_white">#FFFFFFFF</color>
+    <color name="gray_text">#7E8389</color>
+    <color name="gray_divider">#EEEEEF</color>
+    <color name="app_blue">#313F55</color>
+    <color name="app_blue_trans">#E617212F</color>
+    <color name="app_error">#B00020</color>
+    <color name="textfield_normal">#99000000</color>
+    <color name="textfield_box">#52000000</color>
+    <color name="placeholder_bg">#dddddd</color>
+    <color name="transaction_bg">#F2F2F2</color>
+    <color name="gray_product_category">#C4C4C4</color>
+</resources>

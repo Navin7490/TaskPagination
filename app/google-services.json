@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "534106197514",
+    "firebase_url": "https://pagination-ac79e-default-rtdb.firebaseio.com",
+    "project_id": "pagination-ac79e",
+    "storage_bucket": "pagination-ac79e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534106197514:android:c1b2a8972cce34895099f3",
+        "android_client_info": {
+          "package_name": "com.example.taskpagination"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534106197514-2f8s0h0u15qqelkk307t4105drcf9dv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAHoF25s9-v98PeN_WgVObsMkAKHOJ1kto"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534106197514-2f8s0h0u15qqelkk307t4105drcf9dv5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
