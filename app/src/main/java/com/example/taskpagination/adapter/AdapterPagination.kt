@@ -9,11 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.taskpagination.R
 import com.example.taskpagination.`interface`.Deleted
 import com.example.taskpagination.model.ModelPagination
+import com.example.taskpagination.model.UserModel
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class AdapterPagination(
-    val list: ArrayList<ModelPagination>,
-    private val listner: Deleted<ModelPagination>
+    val list: ArrayList<UserModel>,
+    private val listner: Deleted<UserModel>
 ) : RecyclerView.Adapter<AdapterPagination.ViewHolder>() {
 
 
@@ -48,7 +49,7 @@ class AdapterPagination(
         }
     }
 
-    fun updateDataSource(modelPagination: List<ModelPagination>) {
+    fun updateDataSource(modelPagination: List<UserModel>) {
         if (!list.containsAll(modelPagination)) {
             list.addAll(modelPagination)
             notifyDataSetChanged()
@@ -57,13 +58,13 @@ class AdapterPagination(
 
     }
 
-    fun updateDatReal(modelPagination: List<ModelPagination>) {
+    fun updateDatReal(modelPagination: List<UserModel>) {
         list.clear()
         list.addAll(modelPagination)
         notifyDataSetChanged()
     }
 
-    fun insertNewData(modelPagination: ModelPagination) {
+    fun insertNewData(modelPagination: UserModel) {
 
         if (!list.containsAll(listOf(modelPagination))) {
             list.add(list.size, modelPagination)
@@ -74,7 +75,7 @@ class AdapterPagination(
 
     }
 
-    fun updateData(modelPagination: ModelPagination) {
+    fun updateData(modelPagination: UserModel) {
         val index = list.indexOfLast { it.id == modelPagination.id }
 
         if (index > -1) {
@@ -104,8 +105,8 @@ class AdapterPagination(
     inner class ViewHolder(item: View) : RecyclerView.ViewHolder(item) {
 
         val textView = itemView.findViewById<TextView>(R.id.textView)
-        fun dataBind(modelPagination: ModelPagination) {
-            textView.text = modelPagination.number
+        fun dataBind(modelPagination: UserModel) {
+            textView.text = "$modelPagination"
         }
     }
 

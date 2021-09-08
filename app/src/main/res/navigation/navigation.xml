@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/signInFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -19,4 +19,9 @@
         android:name="com.example.taskpagination.ui.AddFragment"
         android:label="fragment_add"
         tools:layout="@layout/fragment_add" />
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.taskpagination.ui.SignInFragment"
+        android:label="fragment_sign_in"
+        tools:layout="@layout/fragment_sign_in" />
 </navigation>
