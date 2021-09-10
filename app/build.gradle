@@ -58,12 +58,16 @@ dependencies {
 
     implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation "com.google.firebase:firebase-analytics-ktx:19.0.1"
+
 
     // Declare the dependency for the Cloud Firestore library
     implementation 'com.google.firebase:firebase-firestore-ktx'
 
     // Declare the dependency for the Firebase Authentication library
     implementation 'com.google.firebase:firebase-auth-ktx'
+    // remote config
+    implementation 'com.google.firebase:firebase-config-ktx'
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.5"
@@ -78,5 +82,8 @@ dependencies {
 
     // Declare the dependency for the Realtime Database library
     implementation 'com.google.firebase:firebase-database-ktx'
+
+     // in- app message
+    implementation 'com.google.firebase:firebase-inappmessaging-display-ktx'
 
 }

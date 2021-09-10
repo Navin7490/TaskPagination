@@ -15,7 +15,9 @@ import com.example.taskpagination.model.*
 import com.example.taskpagination.model.ModelPagination.Companion.create
 import com.example.taskpagination.util.UserType
 import com.google.android.gms.tasks.Tasks
+import com.google.firebase.FirebaseApp
 import com.google.firebase.Timestamp
+import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -46,6 +48,7 @@ class HomeFragment : Fragment(), Deleted<UserModel> {
     var reachedEnd = false
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -61,6 +64,8 @@ class HomeFragment : Fragment(), Deleted<UserModel> {
     ): View {
         // data binding
 
+
+
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
 
@@ -74,7 +79,7 @@ class HomeFragment : Fragment(), Deleted<UserModel> {
 
         //realTimeUpdate()
         // dataPagination()
-        getRealTimeDatabse()
+        getRealTimeDatabase()
 
         binding.btnAdd.setOnClickListener {
             if (checkValidation()) {
@@ -159,38 +164,39 @@ class HomeFragment : Fragment(), Deleted<UserModel> {
 
 
     // get data in real time database
-    private fun getRealTimeDatabse() {
+    private fun getRealTimeDatabase() {
         binding.progressbar.visibility = View.VISIBLE
 
         Firebase.database.getReference("Users")
-            .get()
-            .addOnSuccessListener {
+            .addValueEventListener(object :ValueEventListener{
+                override fun onDataChange(snapshot: DataSnapshot) {
+                    val arrayList = ArrayList<UserModel>()
 
-                val arrayList = ArrayList<UserModel>()
+                    for (data in snapshot.children){
+                        val usersRealModel = data.getValue(UsersRealModel::class.java)
 
-                 for (data in it.children){
-                val usersRealModel = data.getValue(UsersRealModel::class.java)
+                        if (usersRealModel != null) {
+                            usersRealModel.id = data.key.toString()
+                            val userModel = UserModel.create(usersRealModel)
+                            Log.e("tagUser", "$userModel")
+                            arrayList.add(userModel)
 
-                if (usersRealModel != null) {
-                    usersRealModel.id = data.key.toString()
-                    val userModel = UserModel.create(usersRealModel)
-                    Log.e("taguser", "$userModel")
-                    arrayList.add(userModel)
+                        }
 
+                    }
+                    binding.progressbar.visibility = View.GONE
+
+                    adapterPagination.updateDatReal(arrayList)
                 }
 
-                 }
-                binding.progressbar.visibility = View.GONE
+                override fun onCancelled(error: DatabaseError) {
+                    binding.progressbar.visibility = View.GONE
 
-                adapterPagination.updateDatReal(arrayList)
+                    Log.e("tag", "${error.message}")
+                }
 
+            })
 
-            }
-            .addOnFailureListener {
-                binding.progressbar.visibility = View.GONE
-
-                Log.e("tag", "${it.message}")
-            }
     }
 
     // update data
@@ -365,7 +371,7 @@ class HomeFragment : Fragment(), Deleted<UserModel> {
 
                 if (it.isSuccessful) {
                    // adapterPagination.removeData(modelPagination.id)
-                       adapterPagination.updateData(modelPagination)
+                      adapterPagination.updateData(modelPagination)
                     Toast.makeText(requireContext(), "item removed", Toast.LENGTH_SHORT).show()
                 }
             }
