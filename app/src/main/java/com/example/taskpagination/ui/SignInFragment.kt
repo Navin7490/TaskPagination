@@ -95,7 +95,8 @@ class SignInFragment : Fragment() {
         }
 
         binding.btnSignUpGo.setOnClickListener {
-            findNavController().navigate(R.id.addFragment)
+           // findNavController().navigate(R.id.addFragment)
+            findNavController().navigate(R.id.imageFragment)
         }
 
 //        binding.btnSignIn.setOnClickListener {

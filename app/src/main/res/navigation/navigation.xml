@@ -24,4 +24,9 @@
         android:name="com.example.taskpagination.ui.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" />
+    <fragment
+        android:id="@+id/imageFragment"
+        android:name="com.example.taskpagination.ui.ImageFragment"
+        android:label="fragment_image"
+        tools:layout="@layout/fragment_image" />
 </navigation>
